@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shi.healthmf.mapper.HealthCardMfMapper">
+
+    <resultMap id="BaseResultMap" type="com.shi.healthmf.entity.HealthCardMf">
+            <id property="id" column="id" jdbcType="BIGINT"/>
+            <result property="cardPass" column="card_pass" jdbcType="VARCHAR"/>
+            <result property="status" column="status" jdbcType="INTEGER"/>
+            <result property="buyUserId" column="buy_user_id" jdbcType="BIGINT"/>
+            <result property="bindUserId" column="bind_user_id" jdbcType="BIGINT"/>
+            <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+            <result property="buyTime" column="buy_time" jdbcType="TIMESTAMP"/>
+            <result property="bindTime" column="bind_time" jdbcType="TIMESTAMP"/>
+            <result property="bindPhone" column="bind_phone" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,card_pass,status,
+        buy_user_id,bind_user_id,create_time,
+        buy_time,bind_time,bind_phone
+    </sql>
+</mapper>

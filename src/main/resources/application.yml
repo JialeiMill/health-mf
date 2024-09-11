@@ -1,0 +1,39 @@
+server:
+  # 端口
+  port: 8100
+spring:
+  # 通用配置
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+  # 数据源
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: test
+    password: test
+    url: jdbc:mysql://10.10.100.13:3306/open-api?characterEncoding=utf8&connectTimeout=1000&socketTimeout=3000&autoReconnect=true&useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+# Sql文件
+mybatis-plus:
+  mapper-locations: classpath:/mapper/*.xml
+# 网络配置
+http:
+  maxTotal: 100
+  defaultMaxPerRoute: 20
+  connectTimeout: 30000
+  connectionRequestTimeout: 30000
+  socketTimeout: 30000
+  staleConnectionCheckEnabled: true
+  validateAfterInactivity: 3000000
+# 微信配置
+wechat:
+  appId: wxb
+  appSecret: xxx
+# 健康卡配置
+health-card:
+  key: 1
+  secret: 1
+  # 获取健康卡服务URL失败时调整备用地址
+  bakFwUrl: 1
